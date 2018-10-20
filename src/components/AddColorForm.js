@@ -1,40 +1,37 @@
-//This components role is to collect data and pass it on it is
-//NOT concerned with what happens to that data.
+import React from 'react'
+import PropTypes from 'prop-types'
 
-import React, {Component} from 'react'
-
-class AddColorForm extends Component {
-  constructor(props) {
-    super(props)
-    this.submit = this.submit.bind(this)
+const AddColorForm = ({onNewColor=f=>f}) => {
+  //First check and see if the func property exists BEFORE trying to invoke it!
+  //(this makes 'two-way-data-binding'(i.e. Inverse Data Flow) optional)
+  //If new color it not supplied it will default to the dummy f(x): f=>f
+  let _title, _color
+  const submit = e => {
+    e.preventDefault() //Overrides default load bx
+    onNewColor(_title.value, _color.value)
+      _title.value   = ''
+      _color.value   = '#000000'
+      _title.focus()
   }
-  submit(e) {
-    const {_title, _color, } = this.refs
-    this.props.onNewColor(_title.value, _color.value)
-    e.preventDefault()
-    //alert(`New Color: ${_title.value} ${_color.value}`)
-    _title.value = ''
-    _color.value = '#000000'
-    _title.focus()
-  }
-/**
-  const logColor = (title, color) =>
-  console.log(`New color: ${title} | ${value}`)
-  */
-
-
-render() {
-  return (
-    <form onSubmit={this.submit}>
-      <input ref="_title"
+  return(
+    <form onSubmit={submit}>
+      <input ref={input => _title = input}
              type="text"
-             placeholder="color title..." required/>
-      <input ref="_color"
+             placeholder="color name ..." required/>
+      <input ref={input => _color = input}
              type="color" required/>
-      <button>+</button>
+      <button>Add</button>
     </form>
   )
+}//close <AddColorForm/> SFC
+
+AddColorForm.propTypes = {
+  onNewColor: PropTypes.func
 }
+/*
+AddColorForm.defaultProps = {
+  onNewColor: f=>f
 }
+*/
 
 export default AddColorForm

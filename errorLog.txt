@@ -1,0 +1,15 @@
+react-dom.development.js:57 Uncaught Error:
+ Objects are not valid as a React child
+ (found: object with keys {starsSelected}).
+  If you meant to render a COLLection of Children,
+  use an array instead.
+  
+    in p (at StarRating.js:30)
+    in div (at StarRating.js:22)
+    in StarRating (at Color.js:12)
+    in div (at Color.js:11)
+    in section (at Color.js:5)
+    in Color (at ColorList.js:12)
+    in div (at ColorList.js:8)
+    in ColorList (at App.js:63)
+    in div (at App.js:61)

@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App'
-import AddColorForm from './components/AddColorForm'
+import './stylesheets/APP.scss'
 
 import * as serviceWorker from './serviceWorker';
+window.React = React
 
 ReactDOM.render(
-  <App />,
+  <App className="app"/>,
   document.getElementById('root')
   /*
   <AddColorForm onNewColor={logColor}/>,

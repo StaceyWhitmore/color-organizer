@@ -3,11 +3,13 @@
 
 import React from 'react'
 import Color from './Color'
+import PropTypes from 'prop-types'
+import '../stylesheets/ColorList.scss'
+
 
 const ColorList = ({colors=[], onRate=f=>f, onRemove=f=>f}) =>
-  <div>
-    {
-      (colors.lenth === 0) ?
+  <div className="color-list">
+    {(colors.lenth === 0) ?
         <p>No colors listed. (Add a color) </p> :
         colors.map(color =>
           <Color key={color.id}
@@ -15,7 +17,13 @@ const ColorList = ({colors=[], onRate=f=>f, onRemove=f=>f}) =>
             onRate={(rating) => onRate(color.id, rating)}
             onRemove={() => onRemove(color.id)} />
           )
-    } 
+    }
   </div>
+
+  ColorList.propTypes = {
+    colors: PropTypes.array,
+    onRate: PropTypes.func,
+    onRemove: PropTypes.func
+}
 
   export default ColorList
