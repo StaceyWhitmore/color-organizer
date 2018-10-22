@@ -1,5 +1,6 @@
 import React from 'react'
 import StarRating from './StarRating'
+import '../stylesheets/Color.scss'
 
 const Color = ({title,color,rating=0,onRemove=f=>f,onRate=f=>f}) =>
 <section className='color'>

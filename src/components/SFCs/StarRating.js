@@ -1,8 +1,7 @@
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, {Component} from 'react'
 import Star from './Star'
 
-// [...Array(5)] creates an empty array with a length of 5
 const StarRating = ({starsSelected=0, totalStars=5, onRate=f=>f}) =>
   <div className="star-rating">
     {
@@ -16,6 +15,7 @@ const StarRating = ({starsSelected=0, totalStars=5, onRate=f=>f}) =>
     }
   </div>
 
+}//close <StarRating />
 
 StarRating.propTypes = {
   starsSelected: PropTypes.number,
