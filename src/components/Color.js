@@ -22,14 +22,21 @@ class Color extends Component {
   }
 
   //remove gray just before update (otherwise, it will stay gray even after the update)
-  componentWillUpdate() {
+  componentWillUpdate(nextProps) {
+    const {title,rating} = this.props //this.props is current(/old) props
     this.style = null
+    this.refs.title.style.backgroundColor = 'red'//once it has been updated background will stay red
+    this.refs.title.style.color = 'white' //...and font color will remain white
+    //alert will pause update and above changes will not take effect until alert window is closed
+    alert(`${title}: rating ${rating} -> ${nextProps.rating}`)
   }
   componentDidUpdate(prevProps) {
     const {title, rating} = this.props
     const status = (rating > prevProps.rating) ? 'better' : 'worse'
     console.log(`${title} is getting ${status}`)
-  }
+    this.refs.title.style.backgroundColor = "" //reset back to "" (or white) after updated
+    this.refs.title.style.color = "black" //...however, the font will remain black after at least one update has ocurred.
+}
 
 
 
