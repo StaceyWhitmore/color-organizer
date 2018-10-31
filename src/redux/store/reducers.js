@@ -36,7 +36,7 @@ export const colors = (state=[], action) => {
         //i.e. color({}, "ADD_COLOR")
         color({}, action)//...one more color item
       ]
-    case C.RATE_COLOR  //if action.type == C.RATE_COLOR
+    case C.RATE_COLOR : //if action.type == C.RATE_COLOR
       return state.map( //return the entire array with the changed rating
         c => color(c, action)//ie. color(the-item-in-state, "RATE_COLOR")
       )
@@ -57,7 +57,7 @@ export const sort = (state="SORTED_BY_DATE", action) => {
     default :
       return state
   }//close switch
-  return ""
+//  return ""
 }
 
 //to be imported and used by the storeFactory
