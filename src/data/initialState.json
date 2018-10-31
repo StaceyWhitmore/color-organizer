@@ -1,0 +1,33 @@
+{
+  "colors": [
+    {
+      "id": "8586e1d0-9eda-4d90-95e1-8001e8ba6032",
+      "title": "Pink was the new black",
+      "color": "#ff00f7",
+      "rating": 5,
+      "timestamp": "Tue Oct 30 2018 01:42:02 GMT-0800 (PST)"
+    },
+    {
+      "id": "d8456c39-6bdc-2747-9189-6a9c10df7f96",
+      "title": "Blue del Mar",
+      "color": "#0070ff",
+      "rating": 2,
+      "timestamp": "Mon Oct 29 2018 14:17:09 GMT-0800 (PST)"
+    },
+    {
+      "id": "95d9acee-6ae6-4d7b-8499-65b145032979",
+      "title": "Verde",
+      "color": "#67bf4f",
+      "rating": 3,
+      "timestamp": "Tue Oct 30 2018 01:11:17 GMT-0800 (PST)"
+    },
+    {
+      "id": "e9015b4e-975e-423d-c390-77df163e1dbd",
+      "title": "Rotten Tomato",
+      "color": "#d10012",
+      "rating": 1,
+      "timestamp": "Mon Oct 29 2018 01:03:11 GMT-0800 (PST)"
+    }
+  ],
+  "sort": "SORTED_BY_DATE"
+}
