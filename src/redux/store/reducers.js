@@ -15,10 +15,11 @@ export const color = (state={}, action) => {
         //see case for for `C.ADD_COLOR` below
       }
       case C.RATE_COLOR :
-        return (state.id !== action.id) ? // is this Not
-          state : {
-            ...state,
-            rating: action.rating
+        return (state.id !== action.id) ? // if this is not the color you're looking for then ...
+          state : // ... just return this color's state (and the map f(x) below will add the color objec to the array to be returned in the end.)
+          {
+            ...state, //otherwise, return all of this colors's state attributes and add to it ...
+            rating: action.rating //...this rating
           }
       default :
         return state //if it's Not the 1 we're looking for then just return that state item (so we can move on to the next one)
@@ -57,7 +58,8 @@ export const sort = (state="SORTED_BY_DATE", action) => {
     default :
       return state
   }//close switch
-  return ""
+  // eslint-disable-next-line
+  return "" //unreachable code
 }
 
 //to be imported and used by the storeFactory

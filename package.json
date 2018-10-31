@@ -30,6 +30,8 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "case-sensitive-paths-webpack-plugin": "^2.1.2"
+    "case-sensitive-paths-webpack-plugin": "^2.1.2",
+    "webpack": "^4.23.1",
+    "webpack-cli": "^3.1.2"
   }
 }
