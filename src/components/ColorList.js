@@ -3,13 +3,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'//no longer from 'react'
 import Color from './Color'
-import {rateColor, removeColor} from '../actions'
-import {sortFunction} from './lib/array-helpers'
+import {rateColor, removeColor} from '../redux/actions'
+import {sortFunction} from '../lib/array-helpers'
 import '../stylesheets/ColorList.scss'
 
 
 //const ColorList = ({colors=[], onRate=f=>f, onRemove=f=>f}) =>
-const ColorList = ({colors=[], onRate=f=>f, onRemove=f=>f}) => {
+const ColorList = ({ store }) => {
   const {colors, sort} = store.getState()
   const sortedColors = [...colors].sort(sortFunction(sort))
   return (
