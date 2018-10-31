@@ -1,29 +1,18 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import ReactDOM from 'react-dom'
-import App from './components/App'
-import storeFactory from './redux/store/storeFactory'// ./store/index.js
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App'
 import './stylesheets/APP.scss'
-//import { addColor, removeColor, rateColor, sortColors } from './redux/actions'//.js
 //import * as serviceWorker from './serviceWorker';
 
 /*following imports for redux store testing*/
+import storeFactory from './redux/store/storeFactory'// ./store/index.js
+import { addColor, removeColor, rateColor, sortColors } from './redux/actions'//.js
 
-//window.React = React
+window.React = React
 
+/*For testing the redux store in the console***********************************/
+//const store = storeFactory()
 const store = storeFactory()
-
-const render = () =>
-  ReactDOM.render(
-    <App store={store}/>,
-    document.getElementById('root')
-  )
-  //listen for action on store
-  store.subsribe(render)//now Every time the store changes, the render() f(x) will be invoked efficiently updating the UI with new data
-  render()//invoke render() method created above
-
-
-
 
 store.dispatch(addColor("rio verde", "#67bf4f"))
 store.dispatch(rateColor("95d9acee-6ae6-4d7b-8499-65b145032979", 3))
