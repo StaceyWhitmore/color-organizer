@@ -57,7 +57,7 @@ export const sort = (state="SORTED_BY_DATE", action) => {
     default :
       return state
   }//close switch
-//  return ""
+  return ""
 }
 
 //to be imported and used by the storeFactory
