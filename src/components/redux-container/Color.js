@@ -8,41 +8,7 @@ import StarRating from './StarRating'
 import FaTrash from 'react-icons/lib/fa/trash-o'
 import TimeAgo from './TimeAgo'
 
-
-
 class Color extends Component {
-  //bg will turn grey for a short while, while comp is mounting
-  /*
-  componentWillMount() {
-    this.style = {backgroundColor: "#CCC"}
-  }
-  //This method is only called if <Color> is going to update
-
-  shouldComponentUpdate(nextProps){
-    //rating(i.e. this.props) is the old rating and nextProps is the new rating
-    const {rating} = this.props
-    console.log(`old(current)rating is ${rating} | new rating is ${nextProps.rating}`)
-    return rating !== nextProps.rating
-  }
-
-  //remove gray just before update (otherwise, it will stay gray even after the update)
-  componentWillUpdate(nextProps) {
-    const {title,rating} = this.props //this.props is current(/old) props
-    this.style = null
-    this.refs.title.style.backgroundColor = 'red'//once it has been updated background will stay red
-    this.refs.title.style.color = 'white' //...and font color will remain white
-    //alert will pause update and above changes will not take effect until alert window is closed
-    //alert(`${title}: rating ${rating} -> ${nextProps.rating}`)
-  }
-  componentDidUpdate(prevProps) {
-    const {title, rating} = this.props
-    const status = (rating > prevProps.rating) ? 'better' : 'worse'
-    //console.log(`${title} is getting ${status}`)
-    this.refs.title.style.backgroundColor = "" //reset back to "" (or white) after updated
-    this.refs.title.style.color = "black" //...however, the font will remain black after at least one update has ocurred.
-}
-*/
-
 
   render() {
     const {id, title, rating, color, timestamp} = this.props//*added `id` remove ` onRate, onRemove`
