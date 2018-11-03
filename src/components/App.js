@@ -1,7 +1,8 @@
-import React from 'react'
-import AddColorForm from './components/AddColorForm'
+import '../stylesheets/App.scss'
+//import React from 'react'
+import AddColorForm from './AddColorForm'
 import SortMenu from './SortMenu'
-import ColorList from './components/ColorList'
+import ColorList from './ColorList'
 
 //    <SortMenu store={store} />
 const App = ({ store }) =>

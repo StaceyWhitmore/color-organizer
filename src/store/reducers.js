@@ -13,6 +13,12 @@ export const color = (state={}, action) => {
       return {
         //returns an array representing [entire state + (an empty {} object & the action object (type.ADD_COLOR))]
         //see case for for `C.ADD_COLOR` below
+              //NEW!!!! Mat OBJ TO RETURN
+              id: action.id,
+              title: action.title,
+              color: action.color,
+              timestamp: action.timestamp,
+              rating: 0
       }
       case C.RATE_COLOR :
         return (state.id !== action.id) ? // is this Not

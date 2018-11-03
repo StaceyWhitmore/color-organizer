@@ -1,7 +1,7 @@
 //import {PropTypes, Component } from 'react' //PropTypes now in separate module: 'prop-types'
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
-import { addColor } from '../redux/actions'
+import { addColor } from '../actions'
 
 //const AddColorForm = ({onNewColor=f=>f}) => {
 const AddColorForm = ({ store }) => { //now the store will be changed(resulting in UI update and re-render()) each time a new color is added.

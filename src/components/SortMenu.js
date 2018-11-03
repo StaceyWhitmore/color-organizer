@@ -1,5 +1,8 @@
-import '../../stylesheets/Menu.scss'
+import '../stylesheets/Menu.scss'
 import PropTypes from 'prop-types'
+//import Color from './Color'
+//import React from 'react'
+//import { rateColor, removeColor } from '../actions'
 import { sortColors } from '../actions'
 
 const options = {

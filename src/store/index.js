@@ -2,7 +2,7 @@
 //npm install --save redux
 import { createStore, combineReducers, applyMiddleware } from 'redux' //all used to create storeFactory
 import { colors, sort } from './reducers'//import the reducers colors() [which contains color()] and sort() so they can be used to create (and be accessed from) the store
-import stateData from '../../data/initialState'//contains initialState and grows each time page is refreshed
+import stateData from '../data/initialState'//contains initialState and grows each time page is refreshed
 //import { v4 } from 'uuid'//npm uuid
 
 

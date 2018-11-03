@@ -1,11 +1,11 @@
 //This a Stateless Functional Component who's parent is <App/>
 //This component will notify its parent when colors are rated or removed.
+import '../stylesheets/ColorList.scss'
 import React from 'react'
 import PropTypes from 'prop-types'//no longer from 'react'
 import Color from './Color'
-import {rateColor, removeColor} from '../redux/actions'
+import {rateColor, removeColor} from '../actions'
 import {sortFunction} from '../lib/array-helpers'
-import '../stylesheets/ColorList.scss'
 
 
 //const ColorList = ({colors=[], onRate=f=>f, onRemove=f=>f}) =>

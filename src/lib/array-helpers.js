@@ -1,7 +1,7 @@
 const sortBy = (type, field) => {
   switch (type) {
     case "date": //if sort by field timestamp(of type: date) then ...
-      console.log(`a[field] is ${a[field]}. b[field] is ${b[field]}`)
+      //console.log(`a[field] is ${a[field]}. b[field] is ${b[field]}`)
       return (a,b) => new Date(b[field]) - new Date(a[field]) //e.g. new Date(timestamp[timestamp]) - new Date(date[timestamp])
     case "string":
       console.log(`a[field] is ${a[field]}. b[field] is ${b[field]}`)
@@ -13,7 +13,7 @@ const sortBy = (type, field) => {
   }//close switch
 }//close <sortBy() />
 
-export const sortFunction = sort =>
+export const sortFunction = sort => 
   (sort === "SORTED_BY_TITLE") ?
     sortBy("string","title") : //by field title (of type: string) type (a) = "string", field (b) = "title"
     (sort === "SORTED_BY_RATING") ?

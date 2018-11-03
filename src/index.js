@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import App from './App'
-import storeFactory from './redux/store/storeFactory'// ./store/index.js
-import './stylesheets/APP.scss'
+import App from './components/App'
+import storeFactory from './store'// ./store/index.js
+//import './stylesheets/APP.scss'
 //import { addColor, removeColor, rateColor, sortColors } from './redux/actions'//.js
 //import * as serviceWorker from './serviceWorker';
 
