@@ -55,8 +55,8 @@ export const colors = (state=[], action) => {
   }//close switch
 }//close colors() reducer
 
-// ""
-export const sort = (state="SORTED_BY_DATE", action) => {
+// state=SORTED_BY_DATE default SEE initialState.json line 32 also
+export const sort = (state="SORTED_BY_TITLE", action) => {
   switch (action.type) {
     case C.SORT_COLORS : //if action.type == "SORT_COLORS" ...
       return action.sortBy//...then return
