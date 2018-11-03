@@ -1,4 +1,4 @@
-/*REFACTORED for redux-with-containers branch*/
+/*REFACTORED to pass store via CONTEXT*/
 import '../stylesheets/App.scss'
 import PropTypes from 'prop-types'
 import { Component } from 'react'
@@ -25,14 +25,13 @@ class App extends Component {
       this.unsubscribe() //stop listening to the store
   }
   render() {
-    //const {colors, sort} = store.getState()
-    //const sortedColors = [...colors].sort(sortFunction(sort))
-    //*Remains mostlty the same as before Except * it renders Containers of the UI components instead of the presentational components themselves.
+    const {colors, sort} = store.getState()
+    const sortedColors = [...colors].sort(sortFunction(sort))
     return(
       <div className="app">
-        <Menu />
-        <NewColor />
-        <Colors />
+        <SortMenu />
+        <AddColorForm />
+        <ColorList colors={sortedColors} />
       </div>
     )
   }//close render()
