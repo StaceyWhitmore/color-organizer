@@ -1,4 +1,4 @@
-/*REFACTORED to pass redux store via CONTEXT*/
+/*REFACTORED to pass Redux store via CONTEXT. branch redux-by-context*/
 //import {PropTypes, Component } from 'react' //PropTypes now in separate module: 'prop-types'
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'

@@ -1,4 +1,4 @@
-/*REFACTORED to pass Redux store via CONTEXT*/
+/*REFACTORED to pass Redux store via CONTEXT. branch redux-by-context*/
 import '../stylesheets/Color.scss'
 import React, {Component} from 'react'
 //import {Star, StarRating} from'./components'
