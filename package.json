@@ -1,5 +1,10 @@
 {
   "name": "color-organizer",
+  "jest": {
+    "transform": {
+      "^.+\\.jsx$": "babel-jest",
+      "^.+\\.js$": "babel-jest"
+    },
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -20,7 +25,9 @@
     "build": "webpack --progress",
     "prestart": "npm run build",
     "start": "opener http://localhost:3000 & httpster -p 3000 -d ./dist",
-    "lint": "./node_modules/.bin/eslint ."
+    "lint": "./node_modules/.bin/eslint .",
+    "test": "jest"
+
   },
   "keywords": [
     "React",
