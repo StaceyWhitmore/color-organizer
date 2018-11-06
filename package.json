@@ -19,7 +19,8 @@
   "scripts": {
     "build": "webpack --progress",
     "prestart": "npm run build",
-    "start": "opener http://localhost:3000 & httpster -p 3000 -d ./dist"
+    "start": "opener http://localhost:3000 & httpster -p 3000 -d ./dist",
+    "lint": "./node_modules/.bin/eslint ."
   },
   "keywords": [
     "React",
