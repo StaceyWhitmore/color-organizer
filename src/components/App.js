@@ -1,15 +1,11 @@
-import '../stylesheets/App.scss'
-//import React from 'react'
-import AddColorForm from './AddColorForm'
-import SortMenu from './SortMenu'
-import ColorList from './ColorList'
+import { Menu, NewColor, Colors } from './containers'
+import '../stylesheets/APP.scss'
 
-//    <SortMenu store={store} />
-const App = ({ store }) =>
-  <div className="app">
-    <SortMenu store={store} />
-    <AddColorForm store={store} />
-    <ColorList store={store}/>
-  </div>
+const App = () =>
+    <div className="app">
+        <Menu />
+        <NewColor />
+        <Colors />
+    </div>
 
-  export default App
+export default App

@@ -23,7 +23,7 @@ rules:
   semi:
     - error
     - never
-  no-console:0
+  no-console: 0
 globals:
-  __filename: true
-  __dirname: true
+    __filename:true
+    __dirname: true

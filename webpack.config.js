@@ -1,27 +1,23 @@
 var webpack = require("webpack")
-//var HtmlWebpackPlugin = require('html-webpack-plugin')
-//var CleanWebpackPlugin = require('clean-webpack-plugin')
-var path = require("path")
+var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+var path = require('path')
 
 process.noDeprecation = true
 
 module.exports = {
     entry: "./src/index.js",
-
     output: {
-        path: path.join(__dirname, 'dist', 'assets'),
-        //path: path.resolve(__dirname, 'dist', 'assets'),
+        path: path.join(__dirname, "dist/assets"),
         filename: "bundle.js",
+        publicPath: "assets",
         sourceMapFilename: 'bundle.map'
     },
-    //devtool: 'inline-source-map',
     devtool: '#source-map',
-    /*
     devServer: {
-      contentBase: './dist',
-      hot:true
+        inline: true,
+        contentBase: './dist',
+        port: 3000
     },
-    */
     module: {
         rules: [
             {
@@ -37,7 +33,7 @@ module.exports = {
                 use: ['style-loader','css-loader', {
                     loader: 'postcss-loader',
                     options: {
-                      plugins: () => [require('autoprefixer')]
+                        plugins: () => [require('autoprefixer')]
                     }}]
             },
             {
@@ -45,22 +41,12 @@ module.exports = {
                 use: ['style-loader','css-loader', {
                     loader: 'postcss-loader',
                     options: {
-                      plugins: () => [require('autoprefixer')]
+                        plugins: () => [require('autoprefixer')]
                     }}, 'sass-loader']
             }
-
         ]
     },
-
     plugins: [
-      /*
-      new CleanWebpackPlugin(['dist']),
-      new HtmlWebpackPlugin({
-        title: 'Hot Module Replacement'
-      }),
-      new webpack.HotModuleReplacementPlugin(),
-      */
-
         new webpack.DefinePlugin({
             "process.env": {
                 NODE_ENV: JSON.stringify("production")
@@ -70,7 +56,12 @@ module.exports = {
             sourceMap: true,
             warnings: false,
             mangle: false
+        }),
+        new OptimizeCssAssetsPlugin({
+            assetNameRegExp: /\.optimize\.css$/g,
+            cssProcessor: require('cssnano'),
+            cssProcessorOptions: {discardComments: {removeAll: true}},
+            canPrint: true
         })
-
     ]
 }

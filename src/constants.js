@@ -1,4 +1,3 @@
-//imported as 'C' for action creators
 const constants = {
   ADD_COLOR:"ADD_COLOR",
   REMOVE_COLOR: "REMOVE_COLOR",

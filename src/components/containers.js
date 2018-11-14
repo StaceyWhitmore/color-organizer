@@ -1,48 +1,45 @@
-/*REFACTORED for redux-with-containers branch*/
-import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
 import AddColorForm from './ui/AddColorForm'
 import SortMenu from './ui/SortMenu'
 import ColorList from './ui/ColorList'
-import { addColor,
-         sortColors,
-         rateColor,
-         removeColor } from '../actions'
-import { sortFunction } from './lib/array-helpers'
+import { addColor, rateColor, removeColor, sortColors } from '../actions'
+import { sortFunction } from '../lib/array-helpers'
 
-export const NewColor = (props, {store}) =>
-  <AddColorForm onNewColor={(title, color) =>
-        store.dispatch( addColor(title,color))
-  } />
-  NewColor.contextTypes = {
-    store: PropTypes.object
-  }
+export const NewColor = connect(
+    null,
+    dispatch =>
+        ({
+            onNewColor(title, color) {
+                dispatch(addColor(title,color))
+            }
+        })
+)(AddColorForm)
 
-  export const Menu = (props, {store}) =>
-    <SortMenu sort={store.getState().sort} //passses the current sort property from the store's state
-              onSelect={sortBy =>
-                store.dispatch(sortColors(sortby))
-              }/>
+export const Menu = connect(
+    state =>
+        ({
+            sort: state.sort
+        }),
+    dispatch =>
+        ({
+            onSelect(sortBy) {
+                dispatch(sortColors(sortBy))
+            }
+        })
+)(SortMenu)
 
-  Menu.contextTypes = {
-    store: PropTypes.object
-  }
-
-export conts Colors = (props, {store}) => {//Remember BRACKETS {} on this one
-  const {colors, sort } = store.getState()
-  const sortedColors - [...colors].sort(sortFunction(sort))//use helper f(x) from array-helpers
-  return (
-    <ColorList colors={sortedColors}
-               onRemove={id =>
-               store.dispatch(
-                 removeColor(id)//dispatch REMOVE_COLOR action
-               )}
-                onRate={(id,rating) =>
-                store.dispatch(
-                  rateColor(id, rating)
-                )} />
-  )//close return    ()
-}//close <Colors()/> SFC
-
-Colors.contextTypes = {
-  store: PropTypes.object
-}
+export const Colors = connect(
+    state =>
+        ({
+            colors: [...state.colors].sort(sortFunction(state.sort))
+        }),
+    dispatch =>
+        ({
+            onRemove(id) {
+                dispatch(removeColor(id))
+            },
+            onRate(id, rating) {
+                dispatch(rateColor(id, rating))
+            }
+        })
+)(ColorList)

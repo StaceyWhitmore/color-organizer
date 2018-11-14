@@ -1,3 +1,8 @@
+//TESTS ONLY THE color() REDUCER!!!
+import C from '../../../src/constants'
+import { color } from '../../../src/store/reducers'
+import deepFreeze from 'deep-freeze'//prevents action objects from changing
+
 describe("color Reducer", () => {
 
   it("ADD_COLOR success", () => {
@@ -9,8 +14,10 @@ describe("color Reducer", () => {
       color: '#90C3D4',
       timestamp: new Date().toString()
     }
-    const results = color(state, action)
-    expect(results)
+    deepFreeze(state)//
+    deepFreeze(action)//
+    const result = color(state, action)
+    expect(result)
       .toEqual({
         id: 0,
         title: 'Test Teal',
@@ -33,8 +40,10 @@ describe("color Reducer", () => {
       id:0,
       rating:3
     }
-    const results = color(state, action)
-    expect(results)
+    deepFreeze(state)//
+    deepFreeze(action)//
+    const result = color(state, action)
+    expect(result)
       .toEqual({
         id: 0,
         title: 'Test Teal',
@@ -43,5 +52,8 @@ describe("color Reducer", () => {
         rating: 3
       })
   })
+
+  //it("Defaults array for incorrect action", () =>
+    //expect(color()).toEqual({}))
 
 })
