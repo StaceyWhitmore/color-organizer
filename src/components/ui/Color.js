@@ -7,21 +7,29 @@ import StarRating from './StarRating'
 import FaTrash from 'react-icons/lib/fa/trash-o'
 import TimeAgo from './TimeAgo'
 
+import { withRouter } from 'react-router'
 
 
+
+
+//add history
 class Color extends Component {
   //bg will turn grey for a short while, while comp is mounting
 
-
+   // onClick={() => history.push(`/${id}`)} //causes navigation to occur
   render() {
-    const {title, rating, color, timestamp, onRate, onRemove} = this.props
+    const {title, rating, color, timestamp, onRate, onRemove, history} = this.props
     return (
       <section className="color" style={this.style}>
-        <h1 ref="title">{title}</h1>
+        <h1 ref="title"
+                onClick={() => history.push(`/${id}`)}>
+                {title}
+        </h1>
         <button onClick={onRemove}>
           <FaTrash/>
         </button>
         <div className="color"
+          onClick={() => history.push(`/${id}`)}
           style={{ backgroundColor: color }}>
         </div>
         <TimeAgo timestamp={timestamp} />
@@ -46,5 +54,6 @@ Color.defaultProps = {
   color: "#000000",
   onRate: f=>f
 }
-
-export default Color
+/*withRouter a HOC. When <Color> is exported to it, it wraps it with a component
+that passes the router properties (match, history and location) */
+export default withRouter(Color)
