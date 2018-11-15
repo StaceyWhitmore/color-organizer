@@ -19,7 +19,11 @@ export const NewColor = connect(
         })
 )(AddColorForm)
 
+//Replace <Menu> with one that contains links to the new routes
+//Its visual state will be controlled by setting the activeStyle property
+/*
 export const Menu = connect(
+
     state =>
         ({
             sort: state.sort
@@ -31,6 +35,7 @@ export const Menu = connect(
             }
         })
 )(SortMenu)
+*/
 
 export const Colors = connect(
   ({colors}, {match}) =>
