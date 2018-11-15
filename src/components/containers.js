@@ -1,3 +1,7 @@
+/*containers.js NO longer receives the sort value from state.
+It will instead receive sorting instructions as a route parameter,
+passed to <Color> within the match property.*/
+
 import { connect } from 'react-redux'
 import AddColorForm from './ui/AddColorForm'
 import SortMenu from './ui/SortMenu'
@@ -29,17 +33,17 @@ export const Menu = connect(
 )(SortMenu)
 
 export const Colors = connect(
-    state =>
-        ({
-            colors: [...state.colors].sort(sortFunction(state.sort))
-        }),
-    dispatch =>
-        ({
-            onRemove(id) {
-                dispatch(removeColor(id))
-            },
-            onRate(id, rating) {
-                dispatch(rateColor(id, rating))
-            }
-        })
+  ({colors}, {match}) =>
+    ({
+      colors:sortColors(colors, match.params.sort)
+    }),
+  dispatch =>
+    ({
+      onRemove(id) {
+        dispatch(removeColor(id))
+      },
+      onRate(id, rating) {
+        dispatch(rateColor(id,rating))
+      }
+    })
 )(ColorList)
