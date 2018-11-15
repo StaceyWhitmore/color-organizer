@@ -19,3 +19,15 @@ export const sortFunction = sort =>
     (sort === "SORTED_BY_RATING") ?
       sortBy("number","rating") : //by field rating(of type: number)
       sortBy("date","timestamp")  //...otherwise, by field timestamp (of type: date)
+
+export const getFirstItem = () =>
+  array => array[0]
+
+export const filterById = (array, id) =>
+  array.filter(item=>item.id === id) //filter out the item with matching id and put in into array at [0]
+
+//connect runs functions from R -> L (instead of Left to Right)
+export const findById = connect(
+  getFirstItem,
+  filterById
+)

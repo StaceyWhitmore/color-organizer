@@ -1,13 +1,16 @@
 /*containers.js NO longer receives the sort value from state.
 It will instead receive sorting instructions as a route parameter,
 passed to <Color> within the match property.*/
-
+import { compose } from 'redux'
 import { connect } from 'react-redux'
 import AddColorForm from './ui/AddColorForm'
-import SortMenu from './ui/SortMenu'
+//import SortMenu from './ui/SortMenu'
 import ColorList from './ui/ColorList'
-import { addColor, rateColor, removeColor, sortColors } from '../actions'
-import { sortFunction } from '../lib/array-helpers'
+import ColorDetails from './ui/ColorDetails'
+import { addColor, rateColor, removeColor/*, sortColors*/ } from '../actions'//sortColors()...
+//import { sortFunction } from '../lib/array-helpers'
+import { findById } from '../lib/array-helpers'
+import { sortColors } from '../lib/array-helpers'
 
 export const NewColor = connect(
     null,
@@ -52,3 +55,8 @@ export const Colors = connect(
       }
     })
 )(ColorList)
+
+//New
+export const Color = connect(
+  (state, props) => findById(state.colors, props.match.params.id)
+)(ColorDetails)
