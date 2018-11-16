@@ -39,14 +39,14 @@ class Color extends Component {
 }//close <Color />
 
 Color.propTypes = {
-  title:  PropTypes.string,
-  rating:PropTypes.number,
+  title:  PropTypes.string.isRequired,
+  rating:PropTypes.number.isRequired,
   color:PropTypes.string,
+  onRemove: PropTypes.func,
   onRate:PropTypes.func
 }
 
 Color.defaultProps = {
-  title:undefined,
   rating:0,
   color: "#000000",
   onRate: f=>f
