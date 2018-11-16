@@ -6,49 +6,49 @@ const { mount, shallow } = Enzyme
 
 jest.mock('../../../src/components/ui/ColorList')//jest knows to look in '__mocks__'
 
-describe("... the <Colors /> Container ", () => {
+describe('... the <Colors /> Container ', () => {
 
-  let wrapper
-  const _store = {
-    dispatch: jest.fn(),
-    subscribe: jest.fn(),
-    getState: jest.fn(() =>
-    ({
-      sort: "SORTED_BY_DATE",
-      colors: _testColors
-    })
-   )
- }//close {store}
+	let wrapper
+	const _store = {
+		dispatch: jest.fn(),
+		subscribe: jest.fn(),
+		getState: jest.fn(() =>
+			({
+				sort: 'SORTED_BY_DATE',
+				colors: _testColors
+			})
+		)
+	}//close {store}
 
 
-  beforeAll( () => wrapper = mount(
-      <Provider store={_store}>
-        <Colors/>
-      </Provider>
-  ))
+	beforeAll( () => wrapper = mount(
+		<Provider store={_store}>
+			<Colors/>
+		</Provider>
+	))
 
-  /*afterEach(() => jest.resetAllMocks())*/
+	/*afterEach(() => jest.resetAllMocks())*/
 
-  it('"renders three colors"', () => {
-    expect(wrapper
-      .find('ColorListMock')
-      .props()
-      .colors
-      .length
-    ).toBe(3)
+	it('"renders three colors"', () => {
+		expect(wrapper
+			.find('ColorListMock')
+			.props()
+			.colors
+			.length
+		).toBe(3)
 
-  })//it()
+	})//it()
 
-  it("Sorts the colors by date" , () => {
-    expect(wrapper
-      .find('ColorListMock')
-      .props()
-      .colors[0]
-      .title
-    ).toBe("tomato")
-  })//it()
+	it('Sorts the colors by date' , () => {
+		expect(wrapper
+			.find('ColorListMock')
+			.props()
+			.colors[0]
+			.title
+		).toBe('tomato')
+	})//it()
 
- /*
+	/*
   it("dispatches a REMOVE_COLOR action", () => {
     wrapper.find('ColorListMock')
       .props()
@@ -62,7 +62,7 @@ describe("... the <Colors /> Container ", () => {
   })
   */
 
- /*
+	/*
   it("dispatches a RATE_COLOR action", () => {
     wrapper.find('ColorListMock')
       .props()

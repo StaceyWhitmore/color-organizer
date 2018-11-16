@@ -4,3 +4,5 @@ package.json
 .babelrc
 node_modules
 public
+__tests__
+coverage

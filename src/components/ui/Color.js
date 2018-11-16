@@ -11,45 +11,45 @@ import '../../stylesheets/Color.scss'
 
 //add history from <Color> props
 class Color extends Component {
-  //bg will turn grey for a short while, while comp is mounting
+	//bg will turn grey for a short while, while comp is mounting
 
-   // onClick={() => history.push(`/${id}`)} //pushing this route in hx causes navigation to occur
-  render() {
-    const {id, title, rating, color, timestamp, onRate, onRemove, history} = this.props
-    return (
-      <section className="color" style={this.style}>
-        <h1 ref="title"
-                onClick={() => history.push(`/${id}`)}>
-                {title}
-        </h1>
-        <button onClick={onRemove}>
-          <FaTrash/>
-        </button>
-        <div className="color"
-          onClick={() => history.push(`/${id}`)}
-          style={{ backgroundColor: color }}>
-        </div>
-        <TimeAgo timestamp={timestamp} />
-        <div>
-          <StarRating starsSelected={rating} onRate={onRate} />
-        </div>
-      </section>
-    )//close inner return() fx
-  }//render()
+	// onClick={() => history.push(`/${id}`)} //pushing this route in hx causes navigation to occur
+	render() {
+		const {id, title, rating, color, timestamp, onRate, onRemove, history} = this.props
+		return (
+			<section className="color" style={this.style}>
+				<h1 ref="title"
+					onClick={() => history.push(`/${id}`)}>
+					{title}
+				</h1>
+				<button onClick={onRemove}>
+					<FaTrash/>
+				</button>
+				<div className="color"
+					onClick={() => history.push(`/${id}`)}
+					style={{ backgroundColor: color }}>
+				</div>
+				<TimeAgo timestamp={timestamp} />
+				<div>
+					<StarRating starsSelected={rating} onRate={onRate} />
+				</div>
+			</section>
+		)//close inner return() fx
+	}//render()
 }//close <Color />
 
 Color.propTypes = {
-  title:  PropTypes.string.isRequired,
-  rating:PropTypes.number.isRequired,
-  color:PropTypes.string,
-  onRemove: PropTypes.func,
-  onRate:PropTypes.func
+	title:  PropTypes.string.isRequired,
+	rating:PropTypes.number.isRequired,
+	color:PropTypes.string,
+	onRemove: PropTypes.func,
+	onRate:PropTypes.func
 }
 
 Color.defaultProps = {
-  rating:0,
-  color: "#000000",
-  onRate: f=>f
+	rating:0,
+	color: '#000000',
+	onRate: f=>f
 }
 /*withRouter a HOC. When <Color> is exported to it, it wraps it with a component
 that passes the router properties (match, history and location) */

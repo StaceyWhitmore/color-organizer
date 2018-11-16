@@ -13,13 +13,13 @@ import { findById } from '../lib/array-helpers'
 import { sortColors } from '../lib/array-helpers'
 
 export const NewColor = connect(
-    null,
-    dispatch =>
-        ({
-            onNewColor(title, color) {
-                dispatch(addColor(title,color))
-            }
-        })
+	null,
+	dispatch =>
+		({
+			onNewColor(title, color) {
+				dispatch(addColor(title,color))
+			}
+		})
 )(AddColorForm)
 
 //Replace <Menu> with one that contains links to the new routes
@@ -41,22 +41,22 @@ export const Menu = connect(
 */
 
 export const Colors = connect(
-  ({colors}, {match}) =>
-    ({
-      colors:sortColors(colors, match.params.sort)
-    }),
-  dispatch =>
-    ({
-      onRemove(id) {
-        dispatch(removeColor(id))
-      },
-      onRate(id, rating) {
-        dispatch(rateColor(id,rating))
-      }
-    })
+	({colors}, {match}) =>
+		({
+			colors:sortColors(colors, match.params.sort)
+		}),
+	dispatch =>
+		({
+			onRemove(id) {
+				dispatch(removeColor(id))
+			},
+			onRate(id, rating) {
+				dispatch(rateColor(id,rating))
+			}
+		})
 )(ColorList)
 
 //New
 export const Color = connect(
-  ({colors}, {match}) => findById(colors, match.params.id)
+	({colors}, {match}) => findById(colors, match.params.id)
 )(ColorDetails)
