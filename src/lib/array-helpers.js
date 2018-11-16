@@ -1,3 +1,5 @@
+import { compopse } from 'redux'
+
 const sortBy = (type, field) => {
   switch (type) {
     case "date": //if sort by field timestamp(of type: date) then ...
@@ -13,12 +15,33 @@ const sortBy = (type, field) => {
   }//close switch
 }//close <sortBy() />
 
+const sortByDate = () =>
+  (a,b) => new Date(b[field]) - new Date(a[field])
+
+const sortByString = () =>
+(a,b) => (a[field] < b[field]) ? -1 : //if a<b then return falsey(-1)
+ 1 //...otherwise, truthy(1)
+
+//rating
+const sortByNumber
+
+const whichSort
+
+
 export const sortFunction = sort =>
   (sort === "SORTED_BY_TITLE") ?
     sortBy("string","title") : //by field title (of type: string) type (a) = "string", field (b) = "title"
     (sort === "SORTED_BY_RATING") ?
       sortBy("number","rating") : //by field rating(of type: number)
       sortBy("date","timestamp")  //...otherwise, by field timestamp (of type: date)
+
+
+cont getSortState
+
+const locateSortFunction
+
+
+const sortColors
 
 export const getFirstItem = () =>
   array => array[0]
