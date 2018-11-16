@@ -1,7 +1,7 @@
 //import { compose } from 'redux'
 import Page404 from './Page404'
 import PropTypes from 'prop-types'
-import '../../../stylesheets/ColorDetails.scss'
+import '../../stylesheets/ColorDetails.scss'
 
 //add location
 const ColorDetails = ({title, color, history, location}) =>

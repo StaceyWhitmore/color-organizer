@@ -7,10 +7,10 @@ import AddColorForm from './ui/AddColorForm'
 //import SortMenu from './ui/SortMenu'
 import ColorList from './ui/ColorList'
 import ColorDetails from './ui/ColorDetails'
-import { addColor, rateColor, removeColor/*, sortColors*/ } from '../../actions'//sortColors()...
+import { addColor, rateColor, removeColor/*, sortColors*/ } from '../actions'//sortColors()...
 //import { sortFunction } from '../lib/array-helpers'
-import { findById } from '../../lib/array-helpers'
-import { sortColors } from '../../lib/array-helpers'
+import { findById } from '../lib/array-helpers'
+import { sortColors } from '../lib/array-helpers'
 
 export const NewColor = connect(
 	null,

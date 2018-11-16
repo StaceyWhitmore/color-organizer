@@ -1,7 +1,7 @@
 //import {PropTypes, Component } from 'react' //PropTypes now in separate module: 'prop-types'
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
-import '../../../stylesheets/AddColorForm.scss'//'../../stylesheets/Menu.scss'
+import '../../stylesheets/AddColorForm.scss'//'../../stylesheets/Menu.scss'
 
 //import { addColor } from '../../actions'
 
