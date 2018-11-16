@@ -1,5 +1,5 @@
 //Aded history from <Color> props and onClick functionality and withRouter() HOC to wrap <Color>
-import React, {Component} from 'react'
+import {Component} from 'react'
 //import {Star, StarRating} from'./components'
 //import Star from './Star'
 import PropTypes from 'prop-types'
