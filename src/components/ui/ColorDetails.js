@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types'
-import Whoops404 from './Whoops404'
+import Page404 from './Page404'
 import '../../stylesheets/ColorDetails.scss'
 
 const ColorDetails = ({ title, color, history, location }) =>
     (!color) ?
-        <Whoops404 location={location}/> :
+        <Page404 location={location}/> :
         <div className="color-details"
              style={{backgroundColor: color}}
              onClick={() => history.goBack()}>
