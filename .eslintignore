@@ -1,2 +1,6 @@
 dist/assets/
-sample.js
+webpack.config.js
+package.json
+.babelrc
+node_modules
+public
