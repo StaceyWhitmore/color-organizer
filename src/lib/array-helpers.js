@@ -1,4 +1,4 @@
-import { compose } from 'redux'  
+import { compose } from 'redux'
 
 /*
 const sortBy = (type, field) => {
@@ -28,7 +28,7 @@ const sortByString = () =>
 const sortByNumber = () =>
   (a,b) => b[field] - a[field]
 
-const whichSort = () =>
+const whichSort = (type, field) =>
 (type === "date") ?
       sortByDate(field) :
       (type === "string") ?
@@ -38,10 +38,10 @@ const whichSort = () =>
 //EXPORTED returns sortBy("type", "by")
 export const sortFunction = sort =>
   (sort === "SORTED_BY_TITLE") ?
-    sortBy("string","title") : //by field title (of type: string) type (a) = "string", field (b) = "title"
+   whichSort("string","title") : //by field title (of type: string) type (a) = "string", field (b) = "title"
     (sort === "SORTED_BY_RATING") ?
-      sortBy("number","rating") : //by field rating(of type: number)
-      sortBy("date","timestamp")  //...otherwise, by field timestamp (of type: date)
+     whichSort("number","rating") : //by field rating(of type: number)
+     whichSort("date","timestamp")  //...otherwise, by field timestamp (of type: date)
 
 // returned in stateHash["date"] = "SORTED_BY_DATE" (eventually passed to sortFn above)
 const getSortState = (sortBy= "date",
@@ -49,7 +49,7 @@ const getSortState = (sortBy= "date",
     date: "SORTED_BY_DATE",
     title: "SORTED_BY_TITLE",
     rating: "SORTED_BY_RATING"
-  }) => stateHash[sortBY]
+  }) => stateHash[sortBy]
 
 //returns sortBy("type", "by")
 const locateSortFunction = () => compose(
