@@ -15,7 +15,7 @@ class Color extends Component {
 
    // onClick={() => history.push(`/${id}`)} //pushing this route in hx causes navigation to occur
   render() {
-    const {title, rating, color, timestamp, onRate, onRemove, history} = this.props
+    const {id, title, rating, color, timestamp, onRate, onRemove, history} = this.props
     return (
       <section className="color" style={this.style}>
         <h1 ref="title"
