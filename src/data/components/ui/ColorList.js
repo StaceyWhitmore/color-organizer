@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'//no longer from 'react'
 import Color from './Color'
-import '../../stylesheets/ColorList.scss'
+import '../../../stylesheets/ColorList.scss'
 //import {rateColor, removeColor} from '../../actions'
 //import {sortFunction} from '../../lib/array-helpers'
 

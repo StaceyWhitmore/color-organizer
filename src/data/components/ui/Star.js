@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'//npm install --save prop-types
-import '../../stylesheets/Star.scss'
+import '../../../stylesheets/Star.scss'
 
 
 const Star = ({selected=false, onClick=f=>f}) =>

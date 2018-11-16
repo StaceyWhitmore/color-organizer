@@ -1,8 +1,8 @@
 import { Route, Switch } from 'react-router-dom'
 import { Menu } from './ui/Menu'
 import { Page404 } from './ui/Page404'
-import { NewColor, Colors, Color} from '../containers'
-import '../stylesheets/APP.scss'
+import { NewColor, Colors, Color} from './containers'
+import '../../stylesheets/APP.scss'
 
 
 const App = () =>

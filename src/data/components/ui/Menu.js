@@ -1,7 +1,7 @@
 /*upper menu for sorting by: date(default), title, or rating*/
 import PropTypes from 'prop-types'
 import { NavLink }  from 'react-router-dom'//'react-router'
-import '../../stylesheets/Menu.scss'
+import '../../../stylesheets/Menu.scss'
 
 const selectedStyle = { color: 'red' }
 
