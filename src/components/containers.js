@@ -15,18 +15,6 @@ export const NewColor = connect(
         })
 )(AddColorForm)
 
-export const Menu = connect(
-    state =>
-        ({
-            sort: state.sort
-        }),
-    dispatch =>
-        ({
-            onSelect(sortBy) {
-                dispatch(sortColors(sortBy))
-            }
-        })
-)(SortMenu)
 
 export const Colors = connect(
     state =>
@@ -43,3 +31,7 @@ export const Colors = connect(
             }
         })
 )(ColorList)
+
+export const Color = connect(
+    ({ colors }, { match }) => findById(colors, match.params.id)
+)(ColorDetails)
