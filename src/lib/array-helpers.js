@@ -1,4 +1,4 @@
-import { compopse } from 'redux'
+import { compose } from 'redux'  
 
 /*
 const sortBy = (type, field) => {
@@ -44,7 +44,7 @@ export const sortFunction = sort =>
       sortBy("date","timestamp")  //...otherwise, by field timestamp (of type: date)
 
 // returned in stateHash["date"] = "SORTED_BY_DATE" (eventually passed to sortFn above)
-cont getSortState = (sortBy= "date",
+const getSortState = (sortBy= "date",
   stateHash= {
     date: "SORTED_BY_DATE",
     title: "SORTED_BY_TITLE",

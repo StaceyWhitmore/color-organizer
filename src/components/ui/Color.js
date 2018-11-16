@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'
 import StarRating from './StarRating'
 import FaTrash from 'react-icons/lib/fa/trash-o'
 import TimeAgo from './TimeAgo'
-import { withRouter } from 'react-router'
+import { withRouter } from 'react-router-dom'//'react-router'
 import '../../stylesheets/Color.scss'
 
 //add history from <Color> props
