@@ -16,5 +16,5 @@ render(
 			<App />
 		</HashRouter>
 	</Provider>,
-	document.getElementById('root')
+	document.getElementById('react-container')
 )
