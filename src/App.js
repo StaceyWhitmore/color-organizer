@@ -1,5 +1,5 @@
 //import { render } from 'react-dom'
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import Menu from './ui/Menu'
 import Page404 from './ui/Page404'
 import { Colors, Color, NewColor } from './containers.js'
@@ -22,7 +22,7 @@ const App = () =>
     )} />
   </Switch>
 
-/*
+/* see index.js
 render(
     <Provider store={store}>
       <HashRouter>
