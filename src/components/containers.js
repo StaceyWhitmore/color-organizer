@@ -58,5 +58,5 @@ export const Colors = connect(
 
 //New
 export const Color = connect(
-  (state, props) => findById(state.colors, props.match.params.id)
+  ({colors}, {match}) => findById(colors, props.match.params.id)
 )(ColorDetails)
